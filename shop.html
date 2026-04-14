@@ -1,0 +1,614 @@
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item">⚽ Fan &amp; Player Version Jerseys</span>
+    <span class="ticker-item">· · ·</span>
+    <span class="ticker-item">🚚 Fast Delivery PAN India</span>
+    <span class="ticker-item">· · ·</span>
+    <span class="ticker-item">📱 Pay via UPI · GPay · PhonePe</span>
+    <span class="ticker-item">· · ·</span>
+    <span class="ticker-item">✅ 100% Authentic Quality</span>
+    <span class="ticker-item">· · ·</span>
+    <span class="ticker-item">⚽ Fan &amp; Player Version Jerseys</span>
+    <span class="ticker-item">· · ·</span>
+    <span class="ticker-item">🚚 Fast Delivery PAN India</span>
+    <span class="ticker-item">· · ·</span>
+    <span class="ticker-item">📱 Pay via UPI · GPay · PhonePe</span>
+    <span class="ticker-item">· · ·</span>
+    <span class="ticker-item">✅ 100% Authentic Quality</span>
+    <span class="ticker-item">· · ·</span>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button id="hamburger" class="hamburger-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="index.html" class="nav-logo">
+        <span class="brand-top">RN Sports</span>
+        <span class="brand-sub">Hub</span>
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="shop.html" class="nav-link">Shop</a>
+      <a href="tracking.html" class="nav-link">Track</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-search-wrap">
+        <svg class="nav-search-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <input type="text" class="nav-search-input" id="nav-search-input" placeholder="Search jerseys, studs..." autocomplete="off"/>
+        <div id="search-results-dropdown"></div>
+      </div>
+      <button class="nav-icon-btn mobile-search-trigger" id="mobile-search-btn" aria-label="Search">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16" height="16">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </button>
+      <button class="cart-btn" data-cart-trigger aria-label="Cart">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18" height="18">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.3 2.3c-.6.6-.2 1.7.7 1.7H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+        </svg>
+        <span class="cart-badge" style="display:none;">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div id="mobile-nav">
+  <div class="mobile-nav-links">
+    <a href="index.html" class="mobile-nav-link">🏠 &nbsp;Home</a>
+    <a href="shop.html" class="mobile-nav-link">⚽ &nbsp;Shop</a>
+    <a href="tracking.html" class="mobile-nav-link">📦 &nbsp;Track Order</a>
+    <a href="about.html" class="mobile-nav-link">ℹ️ &nbsp;About Us</a>
+    <a href="contact.html" class="mobile-nav-link">📞 &nbsp;Contact</a>
+    <a href="how-it-work.html" class="mobile-nav-link">❓ &nbsp;How It Works</a>
+  </div>
+</div>
+<div id="mobile-nav-backdrop"></div>
+
+<!-- MOBILE SEARCH -->
+<div id="mobile-search-overlay" role="dialog" aria-modal="true">
+  <div id="mobile-search-box">
+    <div style="display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--grey-light);">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16" height="16" style="color:var(--grey-mid);flex-shrink:0;">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+      </svg>
+      <input type="search" id="mobile-search-input" placeholder="Search jerseys, studs..." autocomplete="off"
+        style="flex:1;background:transparent;border:none;outline:none;font-size:16px;color:var(--black);font-family:var(--font-body);"/>
+      <button id="mobile-search-close" style="background:none;border:none;color:var(--grey-mid);cursor:pointer;font-size:20px;line-height:1;padding:4px;">✕</button>
+    </div>
+    <div id="mobile-search-dropdown"></div>
+  </div>
+</div>
+
+<!-- SHOP HERO -->
+<div class="shop-hero">
+  <div class="container">
+    <div class="shop-hero-inner">
+      <div>
+        <div class="tag" style="margin-bottom:10px;" id="shop-breadcrumb">All Products</div>
+        <h1 class="shop-hero-title" id="shop-page-title">Shop <span>All</span></h1>
+        <p class="shop-hero-count" id="products-count">Loading products...</p>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+        <button class="mobile-filter-btn" id="mobile-filter-toggle">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4h18M7 12h10M11 20h2"/></svg>
+          Filters
+        </button>
+        <div class="sort-wrap">
+          <span class="sort-label">Sort:</span>
+          <select class="sort-select" id="sort-select">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="newest">Newest First</option>
+            <option value="name">Name A–Z</option>
+          </select>
+        </div>
+        <div class="view-toggle">
+          <button class="view-btn active" id="grid-view-btn" title="Grid View">⊞</button>
+          <button class="view-btn" id="list-view-btn" title="List View">☰</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN SHOP LAYOUT -->
+<div class="container">
+  <div class="shop-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="filter-sidebar" id="filter-sidebar">
+      <div class="filter-header">
+        <span class="filter-header-title">Filters</span>
+        <span class="filter-clear" id="clear-all-filters">Clear All</span>
+      </div>
+
+      <!-- Category -->
+      <div class="filter-group open" id="fg-category">
+        <div class="filter-group-title" onclick="toggleFilterGroup('fg-category')">
+          Category <span class="chevron">▼</span>
+        </div>
+        <div class="filter-group-body">
+          <label class="filter-option" data-filter="category" data-value="jersey">
+            <span class="filter-checkbox"></span> Jerseys
+          </label>
+          <label class="filter-option" data-filter="category" data-value="studs">
+            <span class="filter-checkbox"></span> Studs &amp; Shoes
+          </label>
+          <label class="filter-option" data-filter="category" data-value="gear">
+            <span class="filter-checkbox"></span> Football Gear
+          </label>
+        </div>
+      </div>
+
+      <!-- Brand -->
+      <div class="filter-group open" id="fg-brand">
+        <div class="filter-group-title" onclick="toggleFilterGroup('fg-brand')">
+          Brand <span class="chevron">▼</span>
+        </div>
+        <div class="filter-group-body">
+          <label class="filter-option" data-filter="brand" data-value="nike">
+            <span class="filter-checkbox"></span> Nike
+          </label>
+          <label class="filter-option" data-filter="brand" data-value="adidas">
+            <span class="filter-checkbox"></span> Adidas
+          </label>
+          <label class="filter-option" data-filter="brand" data-value="puma">
+            <span class="filter-checkbox"></span> Puma
+          </label>
+          <label class="filter-option" data-filter="brand" data-value="mizuno">
+            <span class="filter-checkbox"></span> Mizuno
+          </label>
+          <label class="filter-option" data-filter="brand" data-value="under armour">
+            <span class="filter-checkbox"></span> Under Armour
+          </label>
+          <label class="filter-option" data-filter="brand" data-value="other">
+            <span class="filter-checkbox"></span> Other
+          </label>
+        </div>
+      </div>
+
+      <!-- Jersey Type -->
+      <div class="filter-group open" id="fg-type">
+        <div class="filter-group-title" onclick="toggleFilterGroup('fg-type')">
+          Jersey Type <span class="chevron">▼</span>
+        </div>
+        <div class="filter-group-body">
+          <label class="filter-option" data-filter="jerseyType" data-value="fan">
+            <span class="filter-checkbox"></span> Fan Version
+          </label>
+          <label class="filter-option" data-filter="jerseyType" data-value="player">
+            <span class="filter-checkbox"></span> Player Version
+          </label>
+        </div>
+      </div>
+
+      <!-- Price -->
+      <div class="filter-group open" id="fg-price">
+        <div class="filter-group-title" onclick="toggleFilterGroup('fg-price')">
+          Price Range <span class="chevron">▼</span>
+        </div>
+        <div class="filter-group-body">
+          <div class="price-range-wrap">
+            <div class="price-inputs">
+              <input type="number" class="price-input" id="price-min" placeholder="Min ₹" min="0"/>
+              <span class="price-sep">–</span>
+              <input type="number" class="price-input" id="price-max" placeholder="Max ₹" min="0"/>
+            </div>
+            <button class="price-apply" id="apply-price">Apply Price</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- In Stock -->
+      <div class="filter-group open" id="fg-stock">
+        <div class="filter-group-title" onclick="toggleFilterGroup('fg-stock')">
+          Availability <span class="chevron">▼</span>
+        </div>
+        <div class="filter-group-body">
+          <label class="filter-option" data-filter="inStock" data-value="true">
+            <span class="filter-checkbox"></span> In Stock Only
+          </label>
+        </div>
+      </div>
+    </aside>
+
+    <!-- PRODUCTS AREA -->
+    <div>
+      <!-- Active Filters -->
+      <div class="shop-toolbar">
+        <div class="active-filters" id="active-filters-wrap"></div>
+      </div>
+
+      <!-- Grid -->
+      <div class="products-grid" id="products-grid">
+        <!-- filled by JS -->
+        <div class="shop-empty">
+          <div class="shop-empty-icon">⚽</div>
+          <div class="shop-empty-title">Loading...</div>
+          <div class="shop-empty-sub">Fetching products for you</div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination" id="pagination"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MOBILE FILTER DRAWER -->
+<div id="filter-drawer-overlay"></div>
+<div id="filter-drawer">
+  <div class="drawer-handle"></div>
+  <div id="filter-drawer-inner" style="padding:16px 0 32px;"></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="nav-logo-text" style="margin-bottom:4px;">
+          <span class="brand-top" style="font-size:1.6rem;">RN Sports</span>
+          <span class="brand-sub">Hub</span>
+        </div>
+        <p class="footer-brand-desc">India's go-to destination for football jerseys, studs and gear. Fan &amp; Player versions, fast PAN India delivery, UPI payments.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" title="Instagram">📸</a>
+          <a href="#" class="footer-social" title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="shop.html" class="footer-link">Shop</a>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+          <a href="tracking.html" class="footer-link">Track Order</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Categories</div>
+        <div class="footer-links">
+          <a href="shop.html?cat=jersey" class="footer-link">Fan Jerseys</a>
+          <a href="shop.html?cat=jersey" class="footer-link">Player Jerseys</a>
+          <a href="shop.html?cat=studs" class="footer-link">Football Studs</a>
+          <a href="shop.html?cat=gear" class="footer-link">Football Gear</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Policies</div>
+        <div class="footer-links">
+          <a href="privacy.html" class="footer-link">Privacy Policy</a>
+          <a href="shipping.html" class="footer-link">Shipping Policy</a>
+          <a href="refund-policy.html" class="footer-link">Refund Policy</a>
+          <a href="terms.html" class="footer-link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact Us</div>
+        <div class="footer-links" style="gap:10px;">
+          <div style="display:flex;gap:8px;font-family:var(--font-body);font-size:13px;color:var(--grey-mid);"><span>📱</span><span>+91 9123456780</span></div>
+          <div style="display:flex;gap:8px;font-family:var(--font-body);font-size:13px;color:var(--grey-mid);"><span>⏰</span><span>Mon–Sat, 10am–8pm</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
+          <a href="https://wa.me/919123456780" target="_blank" class="btn btn-red btn-sm" style="justify-content:center;">💬 WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 RN Sports Hub. All rights reserved.</div>
+      <div class="footer-payments">
+        <span class="footer-pay-label">Pay via:</span>
+        <span class="footer-pay-badge">UPI</span>
+        <span class="footer-pay-badge">GPay</span>
+        <span class="footer-pay-badge">PhonePe</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+// ============================================
+// SHOP PAGE — Single unified module
+// Imports everything it needs to avoid race conditions
+// ============================================
+import { fetchAllProducts } from './assets/js/products.js';
+
+// ---- Bootstrap cart + app ----
+import './assets/js/cart.js';
+import './assets/js/app.js';
+
+// ---- STATE ----
+let allProducts = [];
+let activeFilters = { category: [], brand: [], jerseyType: [], inStock: [], priceMin: null, priceMax: null };
+let currentSort = 'featured';
+let currentPage = 1;
+const PER_PAGE = 12;
+let isListView = false;
+
+// ---- INIT ----
+document.addEventListener('DOMContentLoaded', async () => {
+  // Load products — returns dummy data automatically if Firebase not set up
+  allProducts = await fetchAllProducts();
+
+  // Read URL params
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get('cat')) {
+    activeFilters.category = [params.get('cat')];
+    tickFilterOption('category', params.get('cat'));
+  }
+  if (params.get('brand')) {
+    activeFilters.brand = [params.get('brand').toLowerCase()];
+    tickFilterOption('brand', params.get('brand').toLowerCase());
+  }
+  if (params.get('q')) {
+    const q = params.get('q').toLowerCase();
+    allProducts = allProducts.filter(p =>
+      (p.name||'').toLowerCase().includes(q) ||
+      (p.brand||'').toLowerCase().includes(q) ||
+      (p.category||'').toLowerCase().includes(q)
+    );
+    document.getElementById('shop-page-title').innerHTML = `Results for <span>"${params.get('q')}"</span>`;
+    document.getElementById('shop-breadcrumb').textContent = 'Search Results';
+  }
+
+  updateShopTitle();
+  renderProducts();
+  initFilterEvents();
+  initViewToggle();
+  initMobileFilter();
+  initSortSelect();
+});
+
+// ---- PRODUCT CARD (self-contained, no window dependency) ----
+function buildCard(p) {
+  const disc = p.originalPrice && p.originalPrice > p.price
+    ? Math.round((1 - p.price / p.originalPrice) * 100) : 0;
+  const badgeHtml = p.badge
+    ? `<span class="product-card-badge badge-${p.badge}">${p.badge.toUpperCase()}</span>`
+    : disc ? `<span class="product-card-badge badge-sale">-${disc}%</span>` : '';
+  const sizesHtml = (p.sizes||[]).slice(0,4).map(s => `<span class="size-dot">${s}</span>`).join('');
+  const img = (p.images||[])[0] || 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&q=60';
+  const oos = p.stock === 0;
+
+  return `
+    <div class="product-card" onclick="window.location='product.html?id=${p.id}'" style="${oos?'opacity:0.65':''}">
+      <div class="product-card-img-wrap">
+        ${badgeHtml}
+        ${oos ? `<span class="product-card-badge" style="background:var(--grey-mid);color:var(--white);top:auto;bottom:12px;">Out of Stock</span>` : ''}
+        <img src="${img}" alt="${p.name}" class="product-card-img" loading="lazy"
+          onerror="this.src='https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&q=60'"/>
+        ${!oos ? `
+        <button class="product-card-quick" onclick="event.stopPropagation();quickAdd('${p.id}')">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.3 2.3c-.6.6-.2 1.7.7 1.7H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+          Quick Add
+        </button>` : ''}
+      </div>
+      <div class="product-card-body">
+        <div class="product-card-cat">${p.category}${p.jerseyType?' · '+p.jerseyType:''}</div>
+        <div class="product-card-name">${p.name}</div>
+        <div class="product-card-prices">
+          <span class="product-card-price">₹${Number(p.price).toLocaleString('en-IN')}</span>
+          ${p.originalPrice?`<span class="product-card-original">₹${Number(p.originalPrice).toLocaleString('en-IN')}</span>`:''}
+        </div>
+        <div class="product-card-sizes">${sizesHtml}</div>
+      </div>
+    </div>`;
+}
+
+function quickAdd(productId) {
+  const product = window.getProductById?.(productId);
+  if (!product) { window.showToast?.('Product not found.','error'); return; }
+  if (product.stock === 0) { window.showToast?.('Out of stock!','error'); return; }
+  const size = (product.sizes||['M'])[Math.min(1,(product.sizes||['M']).length-1)];
+  if (window.cartAdd?.(product, size, 1)) window.openCart?.();
+}
+window.quickAdd = quickAdd;
+
+// ---- FILTER + SORT ----
+function getFiltered() {
+  let list = [...allProducts];
+  if (activeFilters.category.length) list = list.filter(p => activeFilters.category.includes(p.category));
+  if (activeFilters.brand.length) list = list.filter(p => activeFilters.brand.includes((p.brand||'').toLowerCase()));
+  if (activeFilters.jerseyType.length) list = list.filter(p => activeFilters.jerseyType.includes(p.jerseyType));
+  if (activeFilters.inStock.includes('true')) list = list.filter(p => p.stock > 0);
+  if (activeFilters.priceMin !== null) list = list.filter(p => p.price >= activeFilters.priceMin);
+  if (activeFilters.priceMax !== null) list = list.filter(p => p.price <= activeFilters.priceMax);
+  switch (currentSort) {
+    case 'price-asc':  list.sort((a,b) => a.price - b.price); break;
+    case 'price-desc': list.sort((a,b) => b.price - a.price); break;
+    case 'name':       list.sort((a,b) => (a.name||'').localeCompare(b.name||'')); break;
+    default: list.sort((a,b) => (b.featured?1:0)-(a.featured?1:0));
+  }
+  return list;
+}
+
+function renderProducts() {
+  const filtered = getFiltered();
+  const total = filtered.length;
+  const totalPages = Math.ceil(total / PER_PAGE) || 1;
+  if (currentPage > totalPages) currentPage = 1;
+  const paginated = filtered.slice((currentPage-1)*PER_PAGE, currentPage*PER_PAGE);
+
+  const grid = document.getElementById('products-grid');
+  const countEl = document.getElementById('products-count');
+  countEl.textContent = `${total} product${total!==1?'s':''} found`;
+
+  if (!paginated.length) {
+    grid.innerHTML = `
+      <div class="shop-empty">
+        <div class="shop-empty-icon">🔍</div>
+        <div class="shop-empty-title">No Products Found</div>
+        <div class="shop-empty-sub">Try adjusting your filters</div>
+        <button onclick="clearAllFilters()" class="btn btn-outline btn-sm" style="margin-top:16px;">Clear Filters</button>
+      </div>`;
+    document.getElementById('pagination').innerHTML = '';
+    return;
+  }
+
+  grid.innerHTML = paginated.map(p => buildCard(p)).join('');
+  if (isListView) grid.classList.add('list-view'); else grid.classList.remove('list-view');
+  renderPagination(totalPages);
+  renderActiveTags();
+}
+
+function renderPagination(totalPages) {
+  const el = document.getElementById('pagination');
+  if (totalPages <= 1) { el.innerHTML = ''; return; }
+  let html = `<button class="page-btn ${currentPage===1?'disabled':''}" onclick="goToPage(${currentPage-1})">‹</button>`;
+  for (let i=1; i<=totalPages; i++)
+    html += `<button class="page-btn ${i===currentPage?'active':''}" onclick="goToPage(${i})">${i}</button>`;
+  html += `<button class="page-btn ${currentPage===totalPages?'disabled':''}" onclick="goToPage(${currentPage+1})">›</button>`;
+  el.innerHTML = html;
+}
+
+window.goToPage = function(page) {
+  currentPage = page; renderProducts();
+  window.scrollTo({top:0,behavior:'smooth'});
+};
+
+function renderActiveTags() {
+  const wrap = document.getElementById('active-filters-wrap');
+  const tags = [];
+  activeFilters.category.forEach(v => tags.push({label:'Category: '+v, filter:'category', value:v}));
+  activeFilters.brand.forEach(v => tags.push({label:'Brand: '+v, filter:'brand', value:v}));
+  activeFilters.jerseyType.forEach(v => tags.push({label:'Type: '+v, filter:'jerseyType', value:v}));
+  activeFilters.inStock.forEach(v => tags.push({label:'In Stock Only', filter:'inStock', value:v}));
+  if (activeFilters.priceMin!==null||activeFilters.priceMax!==null)
+    tags.push({label:`₹${activeFilters.priceMin||0}–₹${activeFilters.priceMax||'∞'}`,filter:'price',value:'price'});
+  wrap.innerHTML = tags.map(t =>
+    `<span class="active-filter-tag" onclick="removeFilter('${t.filter}','${t.value}')">${t.label} ✕</span>`
+  ).join('');
+}
+
+function initFilterEvents() {
+  document.querySelectorAll('.filter-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      const { filter, value } = opt.dataset;
+      opt.classList.toggle('checked');
+      const arr = activeFilters[filter];
+      const idx = arr.indexOf(value);
+      if (idx===-1) arr.push(value); else arr.splice(idx,1);
+      currentPage=1; renderProducts();
+    });
+  });
+  document.getElementById('apply-price')?.addEventListener('click', () => {
+    const min = parseFloat(document.getElementById('price-min').value);
+    const max = parseFloat(document.getElementById('price-max').value);
+    activeFilters.priceMin = isNaN(min)?null:min;
+    activeFilters.priceMax = isNaN(max)?null:max;
+    currentPage=1; renderProducts();
+  });
+  document.getElementById('clear-all-filters')?.addEventListener('click', clearAllFilters);
+}
+
+window.clearAllFilters = function() {
+  activeFilters = {category:[],brand:[],jerseyType:[],inStock:[],priceMin:null,priceMax:null};
+  document.querySelectorAll('.filter-option').forEach(o=>o.classList.remove('checked'));
+  document.getElementById('price-min').value='';
+  document.getElementById('price-max').value='';
+  currentPage=1; renderProducts();
+};
+
+window.removeFilter = function(filter, value) {
+  if (filter==='price') {
+    activeFilters.priceMin=null; activeFilters.priceMax=null;
+    document.getElementById('price-min').value='';
+    document.getElementById('price-max').value='';
+  } else {
+    const arr=activeFilters[filter], idx=arr.indexOf(value);
+    if (idx!==-1) arr.splice(idx,1);
+    document.querySelector(`.filter-option[data-filter="${filter}"][data-value="${value}"]`)?.classList.remove('checked');
+  }
+  currentPage=1; renderProducts();
+};
+
+function tickFilterOption(filter, value) {
+  document.querySelector(`.filter-option[data-filter="${filter}"][data-value="${value}"]`)?.classList.add('checked');
+}
+
+function updateShopTitle() {
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get('cat'), brand = params.get('brand');
+  const titleEl = document.getElementById('shop-page-title');
+  const breadEl = document.getElementById('shop-breadcrumb');
+  if (cat) {
+    const labels={jersey:'Jerseys',studs:'Studs & Shoes',gear:'Football Gear'};
+    titleEl.innerHTML=`Shop <span>${labels[cat]||cat}</span>`;
+    breadEl.textContent=labels[cat]||cat;
+  } else if (brand) {
+    const b=brand.charAt(0).toUpperCase()+brand.slice(1);
+    titleEl.innerHTML=`Shop <span>${b}</span>`; breadEl.textContent=b;
+  }
+}
+
+function initSortSelect() {
+  document.getElementById('sort-select')?.addEventListener('change', function() {
+    currentSort=this.value; currentPage=1; renderProducts();
+  });
+}
+
+function initViewToggle() {
+  document.getElementById('grid-view-btn')?.addEventListener('click', () => {
+    isListView=false;
+    document.getElementById('grid-view-btn').classList.add('active');
+    document.getElementById('list-view-btn').classList.remove('active');
+    document.getElementById('products-grid').classList.remove('list-view');
+  });
+  document.getElementById('list-view-btn')?.addEventListener('click', () => {
+    isListView=true;
+    document.getElementById('list-view-btn').classList.add('active');
+    document.getElementById('grid-view-btn').classList.remove('active');
+    document.getElementById('products-grid').classList.add('list-view');
+  });
+}
+
+function initMobileFilter() {
+  const btn=document.getElementById('mobile-filter-toggle');
+  const overlay=document.getElementById('filter-drawer-overlay');
+  const drawer=document.getElementById('filter-drawer');
+  const drawerInner=document.getElementById('filter-drawer-inner');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    drawerInner.innerHTML = document.getElementById('filter-sidebar').innerHTML;
+    overlay.classList.add('open'); drawer.classList.add('open');
+    document.body.style.overflow='hidden';
+    drawerInner.querySelectorAll('.filter-option').forEach(opt => {
+      const {filter,value}=opt.dataset;
+      if (activeFilters[filter]?.includes(value)) opt.classList.add('checked');
+      opt.addEventListener('click', () => {
+        opt.classList.toggle('checked');
+        const arr=activeFilters[filter], idx=arr.indexOf(value);
+        if (idx===-1) arr.push(value); else arr.splice(idx,1);
+        currentPage=1; renderProducts();
+      });
+    });
+  });
+  const close=()=>{overlay.classList.remove('open');drawer.classList.remove('open');document.body.style.overflow='';};
+  overlay.addEventListener('click', close);
+}
+
+window.toggleFilterGroup = function(id) {
+  document.getElementById(id)?.classList.toggle('open');
+};
+</script>
+
+</body>
+</html>

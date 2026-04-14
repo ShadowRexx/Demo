@@ -1,375 +1,681 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product – RangBahar</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: '#C8523A', brandDark: '#a03e2c',
-            cream: '#FAF6F1', charcoal: '#1C1C1C',
-            muted: '#6B6B6B', gold: '#D4A853',
-          },
-          fontFamily: {
-            display: ['"Playfair Display"', 'serif'],
-            body: ['"DM Sans"', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
-
-  <style>
-    body { font-family: 'DM Sans', sans-serif; background: #FAF6F1; color: #1C1C1C; }
-    .wa-btn { background: #25D366; transition: background 0.2s ease, transform 0.15s ease; }
-    .wa-btn:hover { background: #1dbd5a; transform: scale(1.02); }
-    .size-btn { transition: all 0.15s ease; }
-    .size-btn.selected { background: #1C1C1C; color: #FAF6F1; border-color: #1C1C1C; }
-    .thumb { transition: all 0.2s ease; cursor: pointer; }
-    .thumb.active { border-color: #C8523A; }
-    @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
-    .fade-up { animation: fadeUp 0.5s ease forwards; }
-    .delay-1 { animation-delay:0.1s; opacity:0; }
-    .delay-2 { animation-delay:0.2s; opacity:0; }
-    .delay-3 { animation-delay:0.3s; opacity:0; }
-    /* Sticky CTA on mobile */
-    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; padding: 12px 16px; background: white; border-top: 1px solid #e7e5e4; box-shadow: 0 -4px 20px rgba(0,0,0,0.08); }
-    @media(min-width:768px){ .sticky-cta { display: none; } }
-    .product-card-sm { transition: transform 0.2s ease; }
-    .product-card-sm:hover { transform: translateY(-3px); }
-  </style>
-</head>
-
-<body class="antialiased pb-24 md:pb-0">
-
-  <!-- ANNOUNCEMENT BAR -->
-  <div class="bg-brand text-white text-xs font-medium tracking-widest text-center py-2 px-4 uppercase">
-    🎉 Free Delivery on Orders Above ₹799 &nbsp;|&nbsp; Cash on Delivery Available
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item">⚽ Fan &amp; Player Version Jerseys</span>
+    <span class="ticker-item">· · ·</span>
+    <span class="ticker-item">🚚 Fast Delivery PAN India</span>
+    <span class="ticker-item">· · ·</span>
+    <span class="ticker-item">📱 Pay via UPI · GPay · PhonePe</span>
+    <span class="ticker-item">· · ·</span>
+    <span class="ticker-item">✅ 100% Authentic Quality</span>
+    <span class="ticker-item">· · ·</span>
+    <span class="ticker-item">⚽ Fan &amp; Player Version Jerseys</span>
+    <span class="ticker-item">· · ·</span>
+    <span class="ticker-item">🚚 Fast Delivery PAN India</span>
+    <span class="ticker-item">· · ·</span>
+    <span class="ticker-item">📱 Pay via UPI · GPay · PhonePe</span>
+    <span class="ticker-item">· · ·</span>
+    <span class="ticker-item">✅ 100% Authentic Quality</span>
+    <span class="ticker-item">· · ·</span>
   </div>
+</div>
 
-  <!-- NAVBAR -->
-  <nav class="sticky top-0 z-50 bg-cream/95 backdrop-blur border-b border-stone-200 px-4 py-3 flex items-center justify-between">
-    <a href="index.html" class="font-display text-2xl font-bold tracking-tight text-charcoal">
-      Rang<span class="text-brand">Bahar</span>
-    </a>
-    <div class="flex items-center gap-3">
-      <a href="index.html" class="text-sm text-muted hover:text-brand transition-colors hidden md:inline">← Back to Shop</a>
-      <a href="https://wa.me/919876543210" target="_blank"
-        class="wa-btn text-white text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-2">
-        <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        Order Now
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button id="hamburger" class="hamburger-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="index.html" class="nav-logo">
+        <span class="brand-top">RN Sports</span>
+        <span class="brand-sub">Hub</span>
       </a>
     </div>
-  </nav>
-
-  <!-- BREADCRUMB -->
-  <div class="px-4 md:px-10 py-3 text-xs text-muted flex gap-2 items-center">
-    <a href="index.html" class="hover:text-brand transition-colors">Home</a>
-    <span>/</span>
-    <a href="index.html#products" class="hover:text-brand transition-colors">Collection</a>
-    <span>/</span>
-    <span id="breadcrumb-name" class="text-charcoal font-medium">Product</span>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="shop.html" class="nav-link">Shop</a>
+      <a href="tracking.html" class="nav-link">Track</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-search-wrap">
+        <svg class="nav-search-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <input type="text" class="nav-search-input" id="nav-search-input" placeholder="Search jerseys, studs..." autocomplete="off"/>
+        <div id="search-results-dropdown"></div>
+      </div>
+      <button class="nav-icon-btn mobile-search-trigger" id="mobile-search-btn" aria-label="Search">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16" height="16">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </button>
+      <button class="cart-btn" data-cart-trigger aria-label="Cart">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18" height="18">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.3 2.3c-.6.6-.2 1.7.7 1.7H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+        </svg>
+        <span class="cart-badge" style="display:none;">0</span>
+      </button>
+    </div>
   </div>
+</nav>
 
-  <!-- PRODUCT DETAIL -->
-  <div class="max-w-5xl mx-auto px-4 md:px-10 py-4 md:py-8">
-    <div class="md:flex gap-10">
+<!-- MOBILE NAV -->
+<div id="mobile-nav">
+  <div class="mobile-nav-links">
+    <a href="index.html" class="mobile-nav-link">🏠 &nbsp;Home</a>
+    <a href="shop.html" class="mobile-nav-link">⚽ &nbsp;Shop</a>
+    <a href="tracking.html" class="mobile-nav-link">📦 &nbsp;Track Order</a>
+    <a href="about.html" class="mobile-nav-link">ℹ️ &nbsp;About Us</a>
+    <a href="contact.html" class="mobile-nav-link">📞 &nbsp;Contact</a>
+    <a href="how-it-work.html" class="mobile-nav-link">❓ &nbsp;How It Works</a>
+  </div>
+</div>
+<div id="mobile-nav-backdrop"></div>
 
-      <!-- LEFT: Images -->
-      <div class="md:w-1/2 fade-up">
-        <!-- Main Image -->
-        <div class="relative rounded-2xl overflow-hidden bg-stone-100 aspect-[3/4] mb-3">
-          <img id="main-image" src="" alt="Product" class="w-full h-full object-cover" />
-          <!-- Discount Badge -->
-          <span id="discount-badge" class="absolute top-3 left-3 bg-brand text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide"></span>
-          <!-- Tag -->
-          <span id="product-tag" class="absolute top-3 right-3 bg-charcoal/85 text-white text-xs font-semibold px-2.5 py-1 rounded-full hidden"></span>
-        </div>
-        <!-- Thumbnails -->
-        <div class="flex gap-2 overflow-x-auto">
-          <div id="thumb-0" class="thumb active w-20 h-24 rounded-xl overflow-hidden border-2 border-brand flex-shrink-0" onclick="setThumb(0)">
-            <img id="thumb-img-0" src="" alt="thumb" class="w-full h-full object-cover" />
-          </div>
-          <div id="thumb-1" class="thumb w-20 h-24 rounded-xl overflow-hidden border-2 border-transparent flex-shrink-0" onclick="setThumb(1)">
-            <img id="thumb-img-1" src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=200&q=70" alt="thumb" class="w-full h-full object-cover" />
-          </div>
-          <div id="thumb-2" class="thumb w-20 h-24 rounded-xl overflow-hidden border-2 border-transparent flex-shrink-0" onclick="setThumb(2)">
-            <img id="thumb-img-2" src="https://images.unsplash.com/photo-1571513722275-4b41940f54b8?w=200&q=70" alt="thumb" class="w-full h-full object-cover" />
-          </div>
-          <div id="thumb-3" class="thumb w-20 h-24 rounded-xl overflow-hidden border-2 border-transparent flex-shrink-0" onclick="setThumb(3)">
-            <img id="thumb-img-3" src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=200&q=70" alt="thumb" class="w-full h-full object-cover" />
-          </div>
-        </div>
+<!-- MOBILE SEARCH -->
+<div id="mobile-search-overlay" role="dialog" aria-modal="true">
+  <div id="mobile-search-box">
+    <div style="display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--grey-light);">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16" height="16" style="color:var(--grey-mid);flex-shrink:0;">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+      </svg>
+      <input type="search" id="mobile-search-input" placeholder="Search jerseys, studs..." autocomplete="off"
+        style="flex:1;background:transparent;border:none;outline:none;font-size:16px;color:var(--black);font-family:var(--font-body);"/>
+      <button id="mobile-search-close" style="background:none;border:none;color:var(--grey-mid);cursor:pointer;font-size:20px;line-height:1;padding:4px;">✕</button>
+    </div>
+    <div id="mobile-search-dropdown"></div>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb-bar">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="shop.html" id="bc-shop">Shop</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current" id="bc-name">Product</span>
+    </nav>
+  </div>
+</div>
+
+<!-- PDP CONTENT -->
+<div class="container">
+  <!-- Skeleton shown while loading -->
+  <div class="pdp-layout" id="pdp-skeleton">
+    <div>
+      <div class="skeleton" style="aspect-ratio:1;border-radius:var(--radius-lg);margin-bottom:12px;"></div>
+      <div style="display:flex;gap:8px;">
+        <div class="skeleton" style="width:72px;height:72px;border-radius:var(--radius-sm);"></div>
+        <div class="skeleton" style="width:72px;height:72px;border-radius:var(--radius-sm);"></div>
+        <div class="skeleton" style="width:72px;height:72px;border-radius:var(--radius-sm);"></div>
       </div>
-
-      <!-- RIGHT: Details -->
-      <div class="md:w-1/2 mt-6 md:mt-0">
-
-        <!-- Tag pill -->
-        <span id="tag-pill" class="inline-block text-xs font-semibold bg-gold/20 text-yellow-700 px-3 py-1 rounded-full mb-3 hidden"></span>
-
-        <!-- Name -->
-        <h1 id="product-name" class="fade-up delay-1 font-display text-2xl md:text-3xl font-bold text-charcoal leading-snug mb-3"></h1>
-
-        <!-- Rating -->
-        <div class="fade-up delay-1 flex items-center gap-2 mb-4">
-          <div class="flex text-gold text-sm">★★★★★</div>
-          <span class="text-sm text-muted">(47 reviews)</span>
-          <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-semibold">In Stock ✓</span>
-        </div>
-
-        <!-- Price -->
-        <div class="fade-up delay-2 flex items-end gap-3 mb-1">
-          <span id="product-price" class="text-3xl font-display font-bold text-brand"></span>
-          <span id="product-original" class="text-lg text-muted line-through mb-0.5"></span>
-          <span id="savings-badge" class="text-sm font-semibold text-green-600 mb-0.5"></span>
-        </div>
-        <p class="text-xs text-muted mb-4">Inclusive of all taxes. Free shipping above ₹799.</p>
-
-        <!-- SCARCITY URGENCY: Injected by JS if product.stock is set -->
-        <div id="stock-urgency" class="mb-4"></div>
-
-        <!-- Size Selection -->
-        <div class="fade-up delay-2 mb-5">
-          <div class="flex items-center justify-between mb-2">
-            <p class="text-sm font-semibold text-charcoal">Select Size <span class="text-brand font-bold" id="selected-size-label">(L selected)</span></p>
-            <a href="#" class="text-xs text-brand underline">Size Guide</a>
-          </div>
-          <div class="flex gap-2 flex-wrap" id="size-options">
-            <button class="size-btn border-2 border-stone-300 rounded-xl px-4 py-2 text-sm font-semibold text-charcoal hover:border-charcoal" onclick="selectSize(this, 'S')">S</button>
-            <button class="size-btn border-2 border-stone-300 rounded-xl px-4 py-2 text-sm font-semibold text-charcoal hover:border-charcoal" onclick="selectSize(this, 'M')">M</button>
-            <button class="size-btn selected border-2 rounded-xl px-4 py-2 text-sm font-semibold" onclick="selectSize(this, 'L')">L</button>
-            <button class="size-btn border-2 border-stone-300 rounded-xl px-4 py-2 text-sm font-semibold text-charcoal hover:border-charcoal" onclick="selectSize(this, 'XL')">XL</button>
-            <button class="size-btn border-2 border-stone-300 rounded-xl px-4 py-2 text-sm font-semibold text-charcoal hover:border-charcoal" onclick="selectSize(this, 'XXL')">XXL</button>
-          </div>
-        </div>
-
-        <!-- WhatsApp CTA (desktop) — button label updates dynamically with selected size -->
-        <div class="fade-up delay-3 hidden md:flex flex-col gap-3 mb-6">
-          <button id="wa-order-btn"
-            class="wa-btn text-white font-semibold py-4 rounded-2xl flex items-center justify-center gap-2 text-base shadow-lg">
-            <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            <span id="wa-btn-label">Order Size L on WhatsApp</span>
-          </button>
-          <!-- Micro-trust below button -->
-          <div class="flex items-center justify-center gap-4 text-xs text-muted">
-            <span class="flex items-center gap-1">🔒 Secure WhatsApp Order</span>
-            <span class="flex items-center gap-1">✓ 1000+ Orders Placed</span>
-          </div>
-          <a href="index.html" class="text-center text-sm text-muted hover:text-brand transition-colors">← Continue Shopping</a>
-        </div>
-
-        <!-- Trust Badges -->
-        <div class="fade-up delay-3 grid grid-cols-3 gap-3 mb-6">
-          <div class="bg-white rounded-xl p-3 text-center border border-stone-100 shadow-sm">
-            <div class="text-xl mb-1">🚚</div>
-            <div class="text-[11px] font-semibold text-charcoal">Free Delivery</div>
-            <div class="text-[10px] text-muted">Above ₹799</div>
-          </div>
-          <div class="bg-white rounded-xl p-3 text-center border border-stone-100 shadow-sm">
-            <div class="text-xl mb-1">💸</div>
-            <div class="text-[11px] font-semibold text-charcoal">Cash on Delivery</div>
-            <div class="text-[10px] text-muted">Available</div>
-          </div>
-          <div class="bg-white rounded-xl p-3 text-center border border-stone-100 shadow-sm">
-            <div class="text-xl mb-1">↩️</div>
-            <div class="text-[11px] font-semibold text-charcoal">Easy Returns</div>
-            <div class="text-[10px] text-muted">7 days</div>
-          </div>
-        </div>
-
-        <!-- Product Description -->
-        <div class="fade-up delay-3 bg-white rounded-2xl p-5 border border-stone-100 shadow-sm mb-4">
-          <h3 class="font-semibold text-charcoal mb-3 text-sm">Product Details</h3>
-          <ul id="product-details" class="space-y-2 text-sm text-muted">
-            <!-- Filled by JS -->
-          </ul>
-        </div>
-
-        <!-- Share -->
-        <div class="fade-up delay-3 flex items-center gap-3 text-sm text-muted">
-          <span>Share:</span>
-          <a href="https://wa.me/?text=Check%20out%20this%20outfit%20on%20RangBahar!" target="_blank"
-            class="hover:text-brand transition-colors font-semibold flex items-center gap-1">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            WhatsApp
-          </a>
-          <a href="https://www.instagram.com/" target="_blank" class="hover:text-brand transition-colors font-semibold">Instagram</a>
-        </div>
-      </div>
-
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;padding-top:8px;">
+      <div class="skeleton" style="height:12px;width:30%;"></div>
+      <div class="skeleton" style="height:40px;width:80%;"></div>
+      <div class="skeleton" style="height:16px;width:50%;"></div>
+      <div class="skeleton" style="height:56px;width:100%;border-radius:var(--radius);"></div>
+      <div class="skeleton" style="height:50px;width:100%;border-radius:var(--radius);"></div>
+      <div class="skeleton" style="height:50px;width:100%;border-radius:var(--radius);"></div>
     </div>
   </div>
 
-  <!-- YOU MAY ALSO LIKE -->
-  <section class="px-4 md:px-10 py-10 max-w-5xl mx-auto">
-    <h2 class="font-display text-xl font-bold text-charcoal mb-5">You May Also Like</h2>
-    <div id="related-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
-  </section>
+  <!-- Actual product (hidden until loaded) -->
+  <div class="pdp-layout" id="pdp-layout" style="display:none;">
 
-  <!-- FOOTER STRIP -->
-  <footer class="bg-charcoal text-stone-500 py-6 px-6 text-center text-xs">
-    <p class="font-display text-white text-lg font-bold mb-1">Rang<span class="text-brand">Bahar</span></p>
-    <p>© 2025 RangBahar. All rights reserved. | <a href="index.html" class="hover:text-brand">Back to Shop</a></p>
-  </footer>
-
-  <!-- STICKY CTA (mobile only) -->
-  <div class="sticky-cta">
-    <button id="wa-sticky-btn"
-      class="wa-btn w-full text-white font-semibold py-3.5 rounded-2xl flex items-center justify-center gap-2 text-sm">
-      <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-      Order on WhatsApp – Size <span id="sticky-size-label">L</span> · ₹<span id="sticky-price"></span>
-    </button>
-  </div>
-
-  <script>
-    const products = [
-      // stock: low-stock count for urgency display (null = don't show)
-      { id:1, category:'kurti', name:'Gulabi Anarkali Kurti', price:849, originalPrice:1299, image:'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=700&q=80', badge:'35% OFF', tag:'Bestseller', stock:3,
-        details:['Fabric: Premium Georgette','Length: 48 inches (Anarkali)','Occasion: Casual & Festive','Wash Care: Hand wash / Dry clean','Includes: Kurti + Churidar'] },
-      { id:2, category:'coord', name:'Sky Blue Co-ord Set', price:1199, originalPrice:1799, image:'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=700&q=80', badge:'33% OFF', tag:'New Arrival', stock:null,
-        details:['Fabric: Rayon Slub','Set includes: Top + Straight Pants','Length: Calf-length top','Occasion: Brunch, Casual outings','Wash Care: Machine wash cold'] },
-      { id:3, category:'fusion', name:'Printed Palazzo Suit', price:999, originalPrice:1499, image:'https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=700&q=80', badge:'33% OFF', tag:null, stock:null,
-        details:['Fabric: Cotton Cambric','Set includes: Kurti + Palazzo','Print: Digital floral print','Occasion: Everyday & festive','Wash Care: Machine wash gentle'] },
-      { id:4, category:'dupatta', name:'Floral Kurti with Dupatta', price:1349, originalPrice:1899, image:'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=700&q=80', badge:'29% OFF', tag:'Trending', stock:5,
-        details:['Fabric: Chanderi Silk','Set includes: Kurti + Dupatta','Embroidery: Chikankari detailing','Occasion: Festive, Pujas, Functions','Wash Care: Dry clean recommended'] },
-      { id:5, category:'kurti', name:'Rust Block Print Kurti', price:699, originalPrice:999, image:'https://images.unsplash.com/photo-1571513722275-4b41940f54b8?w=700&q=80', badge:'30% OFF', tag:null, stock:null,
-        details:['Fabric: Jaipuri Cotton','Length: 44 inches','Print: Hand block print','Occasion: Daily wear','Wash Care: Machine wash cold'] },
-      { id:6, category:'coord', name:'Sage Green Kurti Set', price:1099, originalPrice:1599, image:'https://images.unsplash.com/photo-1562572159-4efc207f5aff?w=700&q=80', badge:'31% OFF', tag:'Low Stock', stock:4,
-        details:['Fabric: Linen Blend','Set includes: Kurti + Pants','Colour: Sage green with white print','Occasion: Office, Casual outings','Wash Care: Hand wash preferred'] },
-      { id:7, category:'fusion', name:'Indo-Western Crop Top Set', price:1249, originalPrice:1799, image:'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=700&q=80', badge:'31% OFF', tag:'New Arrival', stock:null,
-        details:['Fabric: Cotton Blend','Set includes: Crop top + Palazzo','Style: Indo-western fusion','Occasion: Parties, Outings, Dates','Wash Care: Machine wash cold'] },
-      { id:8, category:'dupatta', name:'Peach Silk Suit with Dupatta', price:1499, originalPrice:2199, image:'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=700&q=80', badge:'32% OFF', tag:'Premium', stock:null,
-        details:['Fabric: Art Silk','Set includes: Kurti + Sharara + Dupatta','Embellishment: Zari border','Occasion: Wedding, Reception, Festivals','Wash Care: Dry clean only'] },
-    ];
-
-    let currentProduct = null;
-    let selectedSize = 'L';
-    const thumbImages = [];
-
-    function init() {
-      const params = new URLSearchParams(window.location.search);
-      const id = parseInt(params.get('id')) || 1;
-      currentProduct = products.find(p => p.id === id) || products[0];
-
-      // Set content
-      document.title = `${currentProduct.name} – RangBahar`;
-      document.getElementById('breadcrumb-name').textContent = currentProduct.name;
-      document.getElementById('main-image').src = currentProduct.image;
-      document.getElementById('thumb-img-0').src = currentProduct.image;
-      document.getElementById('product-name').textContent = currentProduct.name;
-      document.getElementById('product-price').textContent = `₹${currentProduct.price}`;
-      document.getElementById('product-original').textContent = `₹${currentProduct.originalPrice}`;
-      document.getElementById('sticky-price').textContent = currentProduct.price;
-
-      const savings = currentProduct.originalPrice - currentProduct.price;
-      document.getElementById('savings-badge').textContent = `You save ₹${savings}`;
-
-      document.getElementById('discount-badge').textContent = currentProduct.badge;
-
-      if (currentProduct.tag) {
-        const tagPill = document.getElementById('tag-pill');
-        const tagBadge = document.getElementById('product-tag');
-        tagPill.textContent = currentProduct.tag;
-        tagPill.classList.remove('hidden');
-        tagBadge.textContent = currentProduct.tag;
-        tagBadge.classList.remove('hidden');
-      }
-
-      // SCARCITY: Inject low-stock urgency message if product has a stock count
-      const urgencyEl = document.getElementById('stock-urgency');
-      if (currentProduct.stock && urgencyEl) {
-        urgencyEl.innerHTML = `
-          <div class="flex items-center gap-2 bg-orange-50 border border-orange-200 text-orange-700 rounded-xl px-4 py-3 text-sm font-semibold">
-            <span class="text-base">⚡</span>
-            Hurry! Only ${currentProduct.stock} pieces left in stock
-          </div>`;
-      }
-
-      // Product details
-      const detailsList = document.getElementById('product-details');
-      detailsList.innerHTML = currentProduct.details.map(d => `
-        <li class="flex items-center gap-2"><span class="text-brand">✓</span> ${d}</li>
-      `).join('');
-
-      // Set up WA buttons
-      setupWhatsAppButtons();
-
-      // Related products
-      renderRelated(currentProduct.id, currentProduct.category);
-    }
-
-    function setupWhatsAppButtons() {
-      // DYNAMIC WA MESSAGE: includes product name + selected size — pre-fills the WhatsApp chat perfectly
-      const msg = () => `Hi RangBahar! 🛍️ I want to order:\n\n*${currentProduct.name}*\nSize: *${selectedSize}*\nPrice: ₹${currentProduct.price}\n\nPlease confirm availability and share payment details. 🙏`;
-      const url = () => `https://wa.me/919876543210?text=${encodeURIComponent(msg())}`;
-
-      document.getElementById('wa-order-btn').onclick = () => window.open(url(), '_blank');
-      document.getElementById('wa-sticky-btn').onclick = () => window.open(url(), '_blank');
-
-      // Update button label with selected size so user sees their choice reflected
-      const btnLabel = document.getElementById('wa-btn-label');
-      if (btnLabel) btnLabel.textContent = `Order Size ${selectedSize} on WhatsApp`;
-
-      // Update size label indicator above size buttons
-      const sizeLabel = document.getElementById('selected-size-label');
-      if (sizeLabel) sizeLabel.textContent = `(${selectedSize} selected)`;
-
-      // Update sticky mobile button size label
-      const stickySizeLabel = document.getElementById('sticky-size-label');
-      if (stickySizeLabel) stickySizeLabel.textContent = selectedSize;
-    }
-
-    function selectSize(btn, size) {
-      selectedSize = size;
-      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      // Re-run setup so WA message + button label both reflect new size
-      setupWhatsAppButtons();
-    }
-
-    function setThumb(index) {
-      const thumbImgs = [
-        currentProduct.image,
-        document.getElementById('thumb-img-1').src,
-        document.getElementById('thumb-img-2').src,
-        document.getElementById('thumb-img-3').src,
-      ];
-      document.getElementById('main-image').src = thumbImgs[index];
-      document.querySelectorAll('.thumb').forEach((t, i) => {
-        t.classList.toggle('active', i === index);
-      });
-    }
-
-    function renderRelated(currentId, category) {
-      const related = products.filter(p => p.id !== currentId).slice(0, 4);
-      const grid = document.getElementById('related-grid');
-      grid.innerHTML = related.map(p => `
-        <div class="product-card-sm bg-white rounded-2xl overflow-hidden border border-stone-100 shadow-sm cursor-pointer"
-             onclick="window.location='product.html?id=${p.id}'">
-          <div class="relative aspect-[3/4] overflow-hidden bg-stone-100">
-            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
-            <span class="absolute top-2 left-2 bg-brand text-white text-[9px] font-bold px-2 py-0.5 rounded-full">${p.badge}</span>
-          </div>
-          <div class="p-3">
-            <h3 class="text-xs font-semibold text-charcoal leading-snug mb-1">${p.name}</h3>
-            <div class="flex items-center gap-2">
-              <span class="text-brand font-bold text-sm">₹${p.price}</span>
-              <span class="text-muted text-xs line-through">₹${p.originalPrice}</span>
-            </div>
-          </div>
+    <!-- LEFT: Gallery -->
+    <div class="pdp-gallery">
+      <div class="pdp-main-img-wrap" id="pdp-main-wrap">
+        <img id="pdp-main-img" src="" alt="Product" onclick="openLightbox(0)"/>
+        <div class="gallery-nav" id="gallery-nav" style="display:none;">
+          <button class="gallery-arrow" onclick="event.stopPropagation();prevImg()">&#8249;</button>
+          <button class="gallery-arrow" onclick="event.stopPropagation();nextImg()">&#8250;</button>
         </div>
-      `).join('');
+        <div class="pdp-zoom-hint">🔍 Click to zoom</div>
+      </div>
+      <div class="pdp-thumbs" id="pdp-thumbs"></div>
+    </div>
+
+    <!-- RIGHT: Info -->
+    <div class="pdp-info" id="pdp-info"></div>
+
+  </div>
+</div>
+
+<!-- REVIEWS SECTION -->
+<section class="reviews-section" id="reviews-section" style="display:none;">
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:14px;">
+      <div>
+        <div class="tag" style="margin-bottom:10px;">Testimonials</div>
+        <h2 class="section-heading">Customer <span>Reviews</span></h2>
+      </div>
+      <div id="reviews-summary" style="text-align:right;"></div>
+    </div>
+    <div class="review-grid" id="reviews-grid">
+      <div style="grid-column:1/-1;text-align:center;padding:40px 0;color:var(--grey-mid);font-family:var(--font-body);font-size:13px;">
+        Loading reviews...
+      </div>
+    </div>
+    <!-- Write Review -->
+    <div class="review-form-box">
+      <div class="review-form-title">✍️ Write a Review</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Your Name *</label>
+          <input type="text" class="form-input" id="review-name" placeholder="e.g. Arjun M., Mumbai"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Rating *</label>
+          <div class="star-picker" id="star-picker">
+            <button class="star-btn" onclick="setRating(1)">★</button>
+            <button class="star-btn" onclick="setRating(2)">★</button>
+            <button class="star-btn" onclick="setRating(3)">★</button>
+            <button class="star-btn" onclick="setRating(4)">★</button>
+            <button class="star-btn" onclick="setRating(5)">★</button>
+          </div>
+          <div class="star-hint" id="star-hint">Tap to rate</div>
+        </div>
+        <div class="form-group full">
+          <label class="form-label">Your Review *</label>
+          <textarea class="form-input" id="review-text" rows="3" placeholder="Share your experience with this product..."></textarea>
+        </div>
+        <div class="form-group full">
+          <button class="btn btn-red" onclick="submitReview()">Submit Review →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED PRODUCTS -->
+<section class="related-section" id="related-section" style="display:none;">
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:14px;">
+      <div>
+        <div class="tag" style="margin-bottom:10px;">More Like This</div>
+        <h2 class="section-heading">You May <span>Also Like</span></h2>
+      </div>
+      <a href="shop.html" class="btn btn-outline btn-sm">View All →</a>
+    </div>
+    <div class="products-grid" id="related-grid"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="nav-logo-text" style="margin-bottom:4px;">
+          <span class="brand-top" style="font-size:1.6rem;">RN Sports</span>
+          <span class="brand-sub">Hub</span>
+        </div>
+        <p class="footer-brand-desc">India's go-to destination for football jerseys, studs and gear.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social">📸</a>
+          <a href="#" class="footer-social">💬</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="shop.html" class="footer-link">Shop</a>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+          <a href="tracking.html" class="footer-link">Track Order</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Categories</div>
+        <div class="footer-links">
+          <a href="shop.html?cat=jersey" class="footer-link">Fan Jerseys</a>
+          <a href="shop.html?cat=jersey" class="footer-link">Player Jerseys</a>
+          <a href="shop.html?cat=studs" class="footer-link">Football Studs</a>
+          <a href="shop.html?cat=gear" class="footer-link">Football Gear</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Policies</div>
+        <div class="footer-links">
+          <a href="privacy.html" class="footer-link">Privacy Policy</a>
+          <a href="shipping.html" class="footer-link">Shipping Policy</a>
+          <a href="refund-policy.html" class="footer-link">Refund Policy</a>
+          <a href="terms.html" class="footer-link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact Us</div>
+        <div class="footer-links" style="gap:10px;">
+          <div style="display:flex;gap:8px;font-family:var(--font-body);font-size:13px;color:var(--grey-mid);"><span>📱</span><span>+91 9123456780</span></div>
+          <div style="display:flex;gap:8px;font-family:var(--font-body);font-size:13px;color:var(--grey-mid);"><span>⏰</span><span>Mon–Sat, 10am–8pm</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
+          <a href="https://wa.me/919123456780" target="_blank" class="btn btn-red btn-sm" style="justify-content:center;">💬 WhatsApp Us</a>
+          <a href="https://www.instagram.com/rnsportshub/" target="_blank" class="btn btn-outline btn-sm" style="justify-content:center;">📸 Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 RN Sports Hub. All rights reserved.</div>
+      <div class="footer-payments">
+        <span class="footer-pay-label">Pay via:</span>
+        <span class="footer-pay-badge">UPI</span>
+        <span class="footer-pay-badge">GPay</span>
+        <span class="footer-pay-badge">PhonePe</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div id="mobile-sticky-cta">
+  <div class="cta-row">
+    <button class="btn btn-red" style="flex:2;padding:15px;" onclick="addToCartPDP()">
+      🛒 Add to Cart
+    </button>
+    <button class="btn btn-outline" style="flex:1;padding:15px;" onclick="buyNowPDP()">Buy Now</button>
+  </div>
+</div>
+
+<!-- IMAGE LIGHTBOX -->
+<div id="img-lightbox" role="dialog" aria-modal="true">
+  <div class="lbox-topbar">
+    <span class="lbox-counter" id="lbox-counter">1 / 1</span>
+    <button class="lbox-close" id="lbox-close">&#10005;</button>
+  </div>
+  <div class="lbox-main">
+    <button class="lbox-arrow lbox-prev" id="lbox-prev">&#8249;</button>
+    <img id="lbox-img" class="lbox-img" src="" alt="Product"/>
+    <button class="lbox-arrow lbox-next" id="lbox-next">&#8250;</button>
+  </div>
+  <div class="lbox-thumbs" id="lbox-thumbs"></div>
+</div>
+
+<!-- SIZE CHART MODAL -->
+<div id="size-chart-modal" role="dialog" aria-modal="true">
+  <button class="scm-close" onclick="closeSizeChart()">&#10005;</button>
+  <img id="size-chart-img" src="" alt="Size Chart"/>
+</div>
+
+<!-- SCRIPTS -->
+<script type="module">
+// ============================================
+// PRODUCT PAGE — Unified module
+// ============================================
+import { fetchAllProducts, fetchProductById } from './assets/js/products.js';
+import './assets/js/cart.js';
+import './assets/js/app.js';
+
+// ---- STATE ----
+let currentProduct = null;
+let selectedSize = null;
+let qty = 1;
+let selectedRating = 0;
+let imgIndex = 0;
+let lboxImgs = [], lboxIdx = 0;
+
+// ---- BOOT ----
+document.addEventListener('DOMContentLoaded', async () => {
+  const id = new URLSearchParams(window.location.search).get('id');
+  if (!id) { showNotFound(); return; }
+
+  // Load all products (needed for search bar + related)
+  await fetchAllProducts();
+
+  // Get this specific product
+  let product = window.getProductById?.(id) || await fetchProductById(id);
+  if (!product) { showNotFound(); return; }
+
+  renderProduct(product);
+});
+
+// ---- RENDER ----
+function renderProduct(product) {
+  currentProduct = product;
+  window.currentProduct = product;
+
+  document.title = `${product.name} — RN Sports Hub`;
+
+  // Breadcrumb
+  const bcShop = document.getElementById('bc-shop');
+  const bcName = document.getElementById('bc-name');
+  if (bcShop) { bcShop.href=`shop.html?cat=${product.category}`; bcShop.textContent=cap(product.category); }
+  if (bcName) bcName.textContent = product.name;
+
+  // Hide skeleton, show layout
+  document.getElementById('pdp-skeleton').style.display = 'none';
+  const layout = document.getElementById('pdp-layout');
+  layout.style.display = 'grid';
+
+  // Gallery
+  const imgs = product.images || [];
+  const mainImg = document.getElementById('pdp-main-img');
+  if (mainImg) {
+    mainImg.src = imgs[0] || 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80';
+    mainImg.alt = product.name;
+    mainImg.onerror = () => { mainImg.src='https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80'; };
+    mainImg.onclick = () => openLightbox(0);
+  }
+  if (imgs.length > 1) document.getElementById('gallery-nav').style.display = 'flex';
+
+  document.getElementById('pdp-thumbs').innerHTML = imgs.map((src,i) => `
+    <div class="pdp-thumb ${i===0?'active':''}" onclick="switchImg(${i})">
+      <img src="${src}" alt="View ${i+1}" loading="lazy"
+        onerror="this.src='https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=200&q=60'"/>
+    </div>`).join('');
+
+  // Info
+  const disc = product.originalPrice && product.originalPrice > product.price
+    ? Math.round((1-product.price/product.originalPrice)*100) : 0;
+  const savings = product.originalPrice ? product.originalPrice - product.price : 0;
+  const isOOS = product.stock === 0;
+  const stockPct = Math.min(100,((product.stock||0)/20)*100);
+  const badgeMap = {new:'pdp-badge-new',hot:'pdp-badge-hot',sale:'pdp-badge-sale'};
+
+  document.getElementById('pdp-info').innerHTML = `
+    <div class="pdp-brand-cat">
+      ${product.brand||''} · ${(product.category||'').toUpperCase()}
+      ${product.jerseyType?' · '+product.jerseyType.toUpperCase()+' VERSION':''}
+    </div>
+    <h1 class="pdp-name">${product.name}</h1>
+    <div class="pdp-rating-row">
+      <span class="pdp-stars">${'★'.repeat(Math.round(product.rating||5))}</span>
+      <span class="pdp-rating-val">${product.rating||'5.0'}</span>
+      <span class="pdp-rating-count">(${product.reviews||0} reviews)</span>
+      ${product.badge?`<span class="pdp-badge ${badgeMap[product.badge]||''}">${product.badge.toUpperCase()}</span>`:''}
+    </div>
+
+    <div class="pdp-price-block">
+      <div class="pdp-price-current">₹${num(product.price)}</div>
+      ${product.originalPrice?`
+      <div>
+        <div class="pdp-price-original">₹${num(product.originalPrice)}</div>
+        ${disc>0?`<div class="pdp-price-save">You save ₹${num(savings)} (${disc}% off)</div>`:''}
+      </div>`:''}
+    </div>
+
+    ${isOOS
+      ? `<div class="pdp-oos">❌ Out of Stock — Check back soon</div>`
+      : product.stock<=8
+        ? `<div class="pdp-urgency"><div class="pdp-urgency-dot"></div><span class="pdp-urgency-text">Only ${product.stock} left in stock!</span></div>
+           <div class="stock-bar"><div class="stock-bar-fill" style="width:${stockPct}%"></div></div>`
+        : ''
     }
 
-    init();
-  </script>
+    <div style="margin-bottom:20px;">
+      <div class="pdp-section-label">Select Size <span id="selected-size-display"></span></div>
+      <div class="size-grid">
+        ${(product.sizes||[]).map(s=>`
+          <button class="size-btn" ${isOOS?'disabled':''} onclick="selectSize('${s}',this)">${s}</button>
+        `).join('')}
+      </div>
+    </div>
+
+    ${!isOOS?`
+    <div class="pdp-qty-row">
+      <span style="font-family:var(--font-body);font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey-mid);">Quantity:</span>
+      <div class="pdp-qty">
+        <button class="pdp-qty-btn" onclick="changeQty(-1)">−</button>
+        <div class="pdp-qty-val" id="qty-display">1</div>
+        <button class="pdp-qty-btn" onclick="changeQty(1)">+</button>
+      </div>
+    </div>
+    <div class="pdp-ctas">
+      <button class="btn btn-red" style="flex:2;" onclick="addToCartPDP()">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.3 2.3c-.6.6-.2 1.7.7 1.7H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        Add to Cart
+      </button>
+      <button class="btn btn-outline" style="flex:1;" onclick="buyNowPDP()">Buy Now</button>
+    </div>`:''}
+
+    <div class="pdp-trust-row">
+      <div class="pdp-trust-pill"><div class="icon">📱</div><div class="label">UPI Payment</div><div class="sub">GPay · PhonePe</div></div>
+      <div class="pdp-trust-pill"><div class="icon">🚚</div><div class="label">Fast Delivery</div><div class="sub">5–7 working days</div></div>
+      <div class="pdp-trust-pill"><div class="icon">✅</div><div class="label">Authentic</div><div class="sub">Quality assured</div></div>
+    </div>
+
+    <div class="pdp-accordions">
+      <div class="acc-item open" id="acc-desc">
+        <div class="acc-header" onclick="toggleAcc('acc-desc')"><span>Product Description</span><span class="acc-icon">▼</span></div>
+        <div class="acc-body"><div class="acc-content">
+          <p>${product.description||'Premium quality product from RN Sports Hub.'}</p>
+          ${product.features?.length?`<ul style="margin-top:10px;">${product.features.map(f=>`<li>${f}</li>`).join('')}</ul>`:''}
+        </div></div>
+      </div>
+      <div class="acc-item" id="acc-size">
+        <div class="acc-header" onclick="toggleAcc('acc-size')"><span>Size Guide &amp; Chart</span><span class="acc-icon">▼</span></div>
+        <div class="acc-body"><div class="acc-content">
+          ${product.specs?`<div class="specs-grid" style="margin-bottom:14px;">${Object.entries(product.specs).map(([k,v])=>`<div class="spec-item"><div class="spec-key">${k}</div><div class="spec-val">${v}</div></div>`).join('')}</div>`:''}
+          ${sizeChartHtml(product)}
+        </div></div>
+      </div>
+      <div class="acc-item" id="acc-delivery">
+        <div class="acc-header" onclick="toggleAcc('acc-delivery')"><span>Delivery &amp; Payment</span><span class="acc-icon">▼</span></div>
+        <div class="acc-body"><div class="acc-content">
+          <p><strong style="color:var(--red);">Delivery:</strong> 5–7 working days PAN India.</p>
+          <p><strong style="color:var(--red);">Payment:</strong> UPI only — GPay, PhonePe, Paytm, BHIM.</p>
+          <p><strong style="color:var(--red);">Returns:</strong> All sales are final. Contact us on WhatsApp for queries.</p>
+          <a href="https://wa.me/919123456780" target="_blank" class="btn btn-red btn-sm" style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;">💬 WhatsApp Us</a>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="pdp-share-row">
+      <span class="pdp-share-label">Share:</span>
+      <a href="https://wa.me/?text=${encodeURIComponent('Check this out — RN Sports Hub')}" target="_blank" class="btn btn-ghost btn-sm">💬 WhatsApp</a>
+    </div>
+  `;
+
+  document.getElementById('reviews-section').style.display = 'block';
+  document.getElementById('related-section').style.display = 'block';
+  loadReviews(product);
+  loadRelated(product);
+}
+
+// ---- HELPERS ----
+function num(n) { return Number(n).toLocaleString('en-IN'); }
+function cap(s) { return s ? s.charAt(0).toUpperCase()+s.slice(1) : ''; }
+
+function sizeChartHtml(product) {
+  const cat=(product.category||'').toLowerCase(), brand=(product.brand||'').toLowerCase();
+  const isShoes=cat==='studs'||cat.includes('shoe');
+  const isJersey=cat==='jersey';
+  if (!isShoes && !isJersey) return '';
+  let src,alt;
+  if (isShoes) {
+    if (brand.includes('adidas')) { src='assets/images/size_chart/adidas_shoes_size_chart.png'; alt='Adidas Size Chart'; }
+    else if (brand.includes('mizuno')) { src='assets/images/size_chart/mizuno_shoes_size_chart.png'; alt='Mizuno Size Chart'; }
+    else { src='assets/images/size_chart/nike_shoes_size_chart.png'; alt='Shoes Size Chart'; }
+  } else { src='assets/images/size_chart/jersey_size_chart.jpg'; alt='Jersey Size Chart'; }
+  return `<div style="margin-top:8px;">
+    <div style="font-family:var(--font-body);font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:8px;">📏 Size Chart</div>
+    <div class="size-chart-wrap" onclick="openSizeChart('${src}','${alt}')">
+      <img src="${src}" alt="${alt}" class="size-chart-img" loading="lazy" onerror="this.closest('.size-chart-wrap').style.display='none'"/>
+      <div class="size-chart-hint">🔍 Tap to expand</div>
+    </div></div>`;
+}
+
+function loadReviews(product) {
+  const staticReviews = [
+    {name:'Rahul M., Mumbai',rating:5,text:'Amazing quality! Exactly as described. Fast delivery too.',date:'12 Mar 2025'},
+    {name:'Arjun S., Delhi',rating:5,text:'The jersey looks and feels premium. Size chart was accurate.',date:'08 Mar 2025'},
+    {name:'Priya K., Bangalore',rating:4,text:'Good product, packaging was solid. Would order again!',date:'02 Mar 2025'},
+  ];
+  const avg=(staticReviews.reduce((s,r)=>s+r.rating,0)/staticReviews.length).toFixed(1);
+  const colors=['var(--red)','#60A5FA','#F97316','#A78BFA'];
+  document.getElementById('reviews-summary').innerHTML=`
+    <div style="font-family:var(--font-display);font-size:2.8rem;color:var(--red);line-height:1;">${avg}</div>
+    <div style="color:#FBBF24;font-size:1rem;letter-spacing:2px;">★★★★★</div>
+    <div style="font-family:var(--font-body);font-size:12px;color:var(--grey-mid);margin-top:2px;">${staticReviews.length} reviews</div>`;
+  document.getElementById('reviews-grid').innerHTML=staticReviews.map((r,i)=>`
+    <div class="review-card-pdp">
+      <div class="review-header">
+        <div class="review-avatar-circle" style="background:${colors[i%4]};">${r.name.charAt(0)}</div>
+        <div>
+          <div style="font-family:var(--font-body);font-size:0.9rem;font-weight:700;">${r.name}</div>
+          <div style="font-family:var(--font-body);font-size:11px;color:var(--grey-mid);">${r.date}</div>
+        </div>
+      </div>
+      <div class="review-stars">${'★'.repeat(r.rating)}</div>
+      <p class="review-text" style="font-family:var(--font-body);font-size:13px;color:var(--black);line-height:1.6;margin-top:8px;">"${r.text}"</p>
+      <div class="review-verified">✓ Verified Purchase</div>
+    </div>`).join('');
+}
+
+function loadRelated(product) {
+  const related = (window.getRelatedProducts?.(product,4)) || [];
+  if (!related.length) { document.getElementById('related-section').style.display='none'; return; }
+  const buildCard = window.buildProductCard || ((p)=>`<div onclick="window.location='product.html?id=${p.id}'">${p.name}</div>`);
+  document.getElementById('related-grid').innerHTML = related.map(p=>buildCard(p)).join('');
+}
+
+function showNotFound() {
+  document.getElementById('pdp-skeleton').innerHTML=`
+    <div style="grid-column:1/-1;text-align:center;padding:80px 20px;">
+      <div style="font-size:48px;margin-bottom:16px;">🔍</div>
+      <div style="font-family:var(--font-display);font-size:2rem;text-transform:uppercase;margin-bottom:8px;">Product Not Found</div>
+      <a href="shop.html" class="btn btn-red">Browse All Products →</a>
+    </div>`;
+}
+
+// ---- GALLERY ----
+window.switchImg = function(i) {
+  imgIndex=i;
+  const img=document.getElementById('pdp-main-img');
+  img.src=(currentProduct?.images||[])[i]||'';
+  document.querySelectorAll('.pdp-thumb').forEach((t,ti)=>t.classList.toggle('active',ti===i));
+};
+window.prevImg = function() {
+  const n=currentProduct?.images?.length||1;
+  window.switchImg((imgIndex-1+n)%n);
+};
+window.nextImg = function() {
+  const n=currentProduct?.images?.length||1;
+  window.switchImg((imgIndex+1)%n);
+};
+
+// ---- SIZE + QTY ----
+window.selectSize = function(size,btn) {
+  selectedSize=size;
+  document.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  const d=document.getElementById('selected-size-display');
+  if (d) d.textContent=`— ${size}`;
+};
+window.changeQty = function(delta) {
+  qty=Math.max(1,Math.min(10,qty+delta));
+  const d=document.getElementById('qty-display');
+  if (d) d.textContent=qty;
+};
+
+// ---- CART ----
+window.addToCartPDP = function() {
+  if (!selectedSize) { window.showToast?.('Please select a size first!','error'); return; }
+  if (window.cartAdd?.(currentProduct,selectedSize,qty)) window.openCart?.();
+};
+window.buyNowPDP = function() {
+  if (!selectedSize) { window.showToast?.('Please select a size first!','error'); return; }
+  window.cartAdd?.(currentProduct,selectedSize,qty);
+  window.location.href='checkout.html';
+};
+
+// ---- ACCORDION ----
+window.toggleAcc = function(id) {
+  const item=document.getElementById(id);
+  if (!item) return;
+  document.querySelectorAll('.acc-item.open').forEach(el=>{ if(el!==item) el.classList.remove('open'); });
+  item.classList.toggle('open');
+};
+
+// ---- REVIEWS ----
+window.setRating = function(val) {
+  selectedRating=val;
+  const labels=['','Poor','Fair','Good','Very Good','Excellent'];
+  document.getElementById('star-hint').textContent=labels[val]||'';
+  document.querySelectorAll('.star-btn').forEach((b,i)=>b.classList.toggle('active',i<val));
+};
+window.submitReview = function() {
+  const name=document.getElementById('review-name').value.trim();
+  const text=document.getElementById('review-text').value.trim();
+  if (!name) { window.showToast?.('Please enter your name','error'); return; }
+  if (!selectedRating) { window.showToast?.('Please select a star rating','error'); return; }
+  if (text.length<10) { window.showToast?.('Please write at least 10 characters','error'); return; }
+  window.showToast?.('Review submitted! Thank you 🙌');
+  document.getElementById('review-name').value='';
+  document.getElementById('review-text').value='';
+  window.setRating(0);
+};
+
+// ---- LIGHTBOX ----
+window.openLightbox = function(startIdx) {
+  lboxImgs=currentProduct?.images||[];
+  if (!lboxImgs.length) return;
+  lboxIdx=startIdx||0;
+  buildLboxThumbs();
+  setLboxImg(lboxIdx);
+  document.getElementById('img-lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+};
+function setLboxImg(i) {
+  const n=lboxImgs.length;
+  lboxIdx=((i%n)+n)%n;
+  const img=document.getElementById('lbox-img');
+  img.style.opacity='0';
+  setTimeout(()=>{ img.src=lboxImgs[lboxIdx]; img.style.opacity='1'; },120);
+  document.getElementById('lbox-counter').textContent=`${lboxIdx+1} / ${n}`;
+  document.querySelectorAll('.lbox-thumb').forEach((t,ti)=>t.classList.toggle('active',ti===lboxIdx));
+}
+function buildLboxThumbs() {
+  document.getElementById('lbox-thumbs').innerHTML=lboxImgs.map((src,i)=>`
+    <div class="lbox-thumb ${i===0?'active':''}" onclick="setLboxImgPub(${i})">
+      <img src="${src}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=200&q=60'"/>
+    </div>`).join('');
+}
+window.setLboxImgPub=function(i){setLboxImg(i);};
+document.getElementById('lbox-close').onclick=()=>{
+  document.getElementById('img-lightbox').classList.remove('open');
+  document.body.style.overflow='';
+};
+document.getElementById('lbox-prev').onclick=(e)=>{e.stopPropagation();setLboxImg(lboxIdx-1);};
+document.getElementById('lbox-next').onclick=(e)=>{e.stopPropagation();setLboxImg(lboxIdx+1);};
+document.getElementById('img-lightbox').onclick=function(e){
+  if(e.target===this){this.classList.remove('open');document.body.style.overflow='';}
+};
+let touchX=0;
+document.getElementById('img-lightbox').addEventListener('touchstart',e=>{touchX=e.touches[0].clientX;},{passive:true});
+document.getElementById('img-lightbox').addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-touchX;
+  if(Math.abs(dx)>50) setLboxImg(dx<0?lboxIdx+1:lboxIdx-1);
+});
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('img-lightbox').classList.contains('open')) return;
+  if(e.key==='Escape'){document.getElementById('img-lightbox').classList.remove('open');document.body.style.overflow='';}
+  if(e.key==='ArrowLeft') setLboxImg(lboxIdx-1);
+  if(e.key==='ArrowRight') setLboxImg(lboxIdx+1);
+});
+
+// ---- SIZE CHART MODAL ----
+window.openSizeChart=function(src,alt){
+  document.getElementById('size-chart-img').src=src;
+  document.getElementById('size-chart-img').alt=alt;
+  document.getElementById('size-chart-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+};
+window.closeSizeChart=function(){
+  document.getElementById('size-chart-modal').classList.remove('open');
+  document.body.style.overflow='';
+};
+document.getElementById('size-chart-modal').onclick=function(e){
+  if(e.target===this) window.closeSizeChart();
+};
+</script>
 
 </body>
 </html>
